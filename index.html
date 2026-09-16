@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee &amp; Guy Unisex Salon — Katpadi, Vellore</title>
+<meta name="description" content="Lee & Guy Unisex Salon, Katpadi, Vellore. Haircuts, beard trims, colour, spa & bridal makeup for men and women. 4.5★ from 558 reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17140f;
+    --ink-soft:#2c2620;
+    --cream:#f5eddd;
+    --cream-2:#ece0c8;
+    --paper:#faf6ec;
+    --amber:#e8862b;
+    --amber-dark:#c76e1a;
+    --rose:#c8577a;
+    --rose-dark:#a8425f;
+    --line:rgba(23,20,15,0.16);
+    --muted:#5c5346;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'DM Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  h1,h2,h3,h4{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+    color:var(--ink);
+    line-height:1;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  ul{margin:0;padding:0;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .hand{font-family:'Caveat',cursive;}
+
+  /* grain overlay for texture */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
+    opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'DM Sans';font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink);
+  }
+  .tag .scribble{
+    background:linear-gradient(transparent 62%, var(--amber) 62%);
+    padding:0 3px;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--amber);color:var(--ink);font-weight:800;font-size:14.5px;
+    padding:14px 26px;border:3px solid var(--ink);border-radius:2px;
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;
+  }
+  .btn:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink);}
+  .btn:active{transform:translate(0,0);box-shadow:2px 2px 0 var(--ink);}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:5px 5px 0 var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:var(--cream);}
+  .btn.rose{background:var(--rose);color:#fff;}
+  .btn svg{width:17px;height:17px;flex:none;}
+
+  section{position:relative;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .reveal{transition:none;opacity:1;transform:none;} }
+
+  /* ---------- Marquee ---------- */
+  .marquee-wrap{background:var(--ink);color:var(--cream);overflow:hidden;padding:11px 0;border-bottom:3px solid var(--amber);}
+  .marquee-track{display:flex;width:max-content;animation:scrollmq 26s linear infinite;}
+  .marquee-track span{
+    padding:0 26px;font-family:'Anton';font-size:14px;letter-spacing:.05em;
+    display:flex;align-items:center;gap:26px;white-space:nowrap;
+  }
+  .marquee-track span::after{content:"✂";color:var(--amber);}
+  @keyframes scrollmq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:60;
+    background:rgba(245,237,221,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:3px solid var(--ink);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand h1{font-size:24px;letter-spacing:.01em;}
+  .brand h1 span{color:var(--amber);}
+  .brand-sub{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  nav.links{display:flex;align-items:center;gap:28px;}
+  nav.links a{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;position:relative;padding:4px 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:3px;background:var(--amber);transition:width .2s ease;}
+  nav.links a:hover::after{width:100%;}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:2px solid var(--ink);padding:8px;border-radius:2px;}
+  .menu-toggle span{display:block;width:22px;height:2.5px;background:var(--ink);margin:4px 0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:60px 0 80px;
+    background:
+      repeating-linear-gradient(135deg, transparent, transparent 38px, rgba(23,20,15,0.035) 38px, rgba(23,20,15,0.035) 39px),
+      var(--cream);
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;}
+  .stamp{
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    width:104px;height:104px;border-radius:50%;background:var(--paper);
+    border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);
+    transform:rotate(-9deg);flex:none;
+  }
+  .stamp b{font-family:'Anton';font-size:24px;line-height:1;}
+  .stamp span{font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:center;}
+  .hero-badge-row{display:flex;align-items:center;gap:16px;margin-bottom:26px;}
+  .hero-badge-text{font-size:13.5px;font-weight:700;color:var(--muted);max-width:210px;line-height:1.4;}
+  .hero-badge-text b{color:var(--ink);}
+  .hero h2.display{
+    font-size:clamp(40px,6.4vw,74px);
+    line-height:0.96;
+    margin-bottom:22px;
+  }
+  .hero h2.display .stroke{
+    -webkit-text-stroke:2px var(--ink);
+    color:var(--cream);
+  }
+  .hero p.lead{
+    font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:480px;margin-bottom:30px;font-weight:500;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+  .hero-note{margin-top:18px;font-size:15px;color:var(--muted);}
+  .hero-note .hand{font-size:19px;color:var(--rose-dark);}
+
+  .collage{position:relative;height:460px;}
+  .poly{
+    position:absolute;background:var(--ink);border:3px solid var(--ink);border-radius:3px;
+    box-shadow:6px 6px 0 rgba(23,20,15,0.25);overflow:hidden;
+  }
+  .poly .tape{
+    position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    width:70px;height:22px;background:rgba(245,237,221,0.75);border:1px solid rgba(23,20,15,0.2);
+  }
+  .poly .cap{
+    position:absolute;bottom:0;left:0;right:0;background:var(--ink);color:var(--cream);
+    font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:8px 10px;
+  }
+  .halftone{
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(245,237,221,0.9) 1.4px, transparent 1.5px);
+    background-size:9px 9px;
+  }
+  .p1{width:56%;top:0;left:4%;height:250px;transform:rotate(-4deg);background:linear-gradient(160deg,var(--amber-dark),var(--ink));}
+  .p2{width:44%;top:18%;right:0;height:190px;transform:rotate(5deg);background:linear-gradient(160deg,var(--rose-dark),var(--ink));}
+  .p3{width:50%;bottom:0;left:14%;height:200px;transform:rotate(3deg);background:linear-gradient(160deg,var(--ink-soft),var(--ink));}
+
+  /* ---------- Stats strip ---------- */
+  .stats-strip{
+    background:var(--ink);color:var(--cream);padding:0;
+    transform:skewY(-1.4deg);margin:-34px 0 0;position:relative;z-index:5;
+  }
+  .stats-strip .container{transform:skewY(1.4deg);}
+  .stats-row{display:flex;justify-content:space-between;flex-wrap:wrap;padding:30px 0;gap:20px;}
+  .stat-item{text-align:center;flex:1;min-width:130px;}
+  .stat-item b{font-family:'Anton';font-size:30px;color:var(--amber);display:block;}
+  .stat-item span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#cfc2a6;}
+
+  /* ---------- Section shell ---------- */
+  .section{padding:100px 0;}
+  .section-alt{background:var(--cream-2);}
+  .section-head{max-width:620px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(32px,4vw,48px);margin:14px 0 12px;}
+  .section-head p{color:var(--muted);font-size:16px;line-height:1.6;font-weight:500;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center;}
+  .about-photo{position:relative;aspect-ratio:4/5;}
+  .about-photo .frame{
+    position:absolute;inset:0;border:3px solid var(--ink);border-radius:3px;overflow:hidden;
+    background:linear-gradient(150deg,var(--rose-dark) 0%, var(--ink) 55%, var(--amber-dark) 100%);
+    box-shadow:9px 9px 0 rgba(23,20,15,0.18);
+  }
+  .about-photo .frame .halftone{opacity:.35;}
+  .about-photo .badge-corner{
+    position:absolute;bottom:-24px;left:-24px;background:var(--amber);border:3px solid var(--ink);
+    border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transform:rotate(-8deg);box-shadow:4px 4px 0 var(--ink);
+  }
+  .about-photo .badge-corner b{font-family:'Anton';font-size:15px;line-height:1.15;text-align:center;}
+  .about-copy p{color:var(--ink-soft);line-height:1.75;font-size:16px;margin-bottom:16px;font-weight:500;}
+  .pull{
+    font-family:'Caveat';font-size:26px;color:var(--rose-dark);font-weight:700;
+    border-left:4px solid var(--amber);padding-left:18px;margin:22px 0;line-height:1.35;
+  }
+  .about-list{list-style:none;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:10px;}
+  .about-list li{
+    font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
+    background:var(--paper);border:2px solid var(--ink);border-radius:100px;padding:8px 16px;
+  }
+
+  /* ---------- Services (menu board) ---------- */
+  .menu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:3px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--paper);}
+  .menu-col{padding:40px 40px;}
+  .menu-col + .menu-col{border-left:3px dashed var(--ink);}
+  .menu-col h3{font-size:26px;margin-bottom:6px;}
+  .menu-col h3 em{font-style:normal;color:var(--amber-dark);}
+  .menu-col.ladies h3 em{color:var(--rose-dark);}
+  .menu-tag{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px;display:block;}
+  .menu-item{
+    display:flex;align-items:baseline;gap:8px;padding:13px 0;border-bottom:1px dotted var(--line);
+    font-weight:700;font-size:15.5px;
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item .fill{flex:1;border-bottom:1px dotted transparent;}
+  .menu-item svg{width:15px;height:15px;color:var(--amber-dark);flex:none;}
+  .menu-col.ladies .menu-item svg{color:var(--rose-dark);}
+
+  /* ---------- Why strip (diagonal cut) ---------- */
+  .why-section{
+    background:var(--ink);color:var(--cream);
+    clip-path:polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+    padding:110px 0;
+  }
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .why-cell{padding:0 26px;border-left:1px solid rgba(245,237,221,0.15);}
+  .why-cell:first-child{border-left:none;}
+  .why-cell b.big{font-family:'Anton';font-size:44px;color:var(--amber);display:block;margin-bottom:14px;}
+  .why-cell h4{font-family:'DM Sans';font-weight:800;font-size:15.5px;text-transform:uppercase;letter-spacing:.03em;color:#fff;margin-bottom:10px;}
+  .why-cell p{font-size:14px;color:#cfc2a6;line-height:1.6;font-weight:500;}
+
+  /* ---------- Gallery ---------- */
+  .polaroid-row{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;}
+  .polaroid{
+    background:var(--paper);border:1px solid var(--line);padding:14px 14px 42px;
+    box-shadow:0 10px 26px rgba(23,20,15,0.14);width:220px;flex:none;position:relative;
+  }
+  .polaroid:nth-child(1){transform:rotate(-5deg);}
+  .polaroid:nth-child(2){transform:rotate(3deg);margin-top:26px;}
+  .polaroid:nth-child(3){transform:rotate(-2deg);}
+  .polaroid:nth-child(4){transform:rotate(6deg);margin-top:14px;}
+  .polaroid:nth-child(5){transform:rotate(-7deg);margin-top:6px;}
+  .polaroid:hover{transform:rotate(0) scale(1.04);z-index:5;box-shadow:0 16px 34px rgba(23,20,15,0.22);}
+  .polaroid .shot{aspect-ratio:1/1;position:relative;overflow:hidden;}
+  .polaroid .cap-text{
+    position:absolute;bottom:10px;left:0;right:0;text-align:center;
+    font-family:'Caveat';font-weight:700;font-size:19px;color:var(--ink-soft);
+  }
+
+  /* ---------- Reviews ---------- */
+  .rev-summary{display:flex;align-items:center;gap:26px;margin-bottom:44px;flex-wrap:wrap;}
+  .rev-summary .big{font-family:'Anton';font-size:64px;color:var(--ink);}
+  .rev-stars{color:var(--amber-dark);display:flex;gap:2px;margin:4px 0;}
+  .rev-stars svg{width:18px;height:18px;}
+  .rev-sub{font-size:14px;color:var(--muted);font-weight:700;}
+  .rev-tags{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:38px;}
+  .rev-tags span{
+    font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
+    background:var(--ink);color:var(--cream);padding:7px 14px;border-radius:100px;
+  }
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .rev-card{
+    background:var(--paper);border:2.5px solid var(--ink);border-radius:4px;padding:26px 24px 22px;
+    box-shadow:6px 6px 0 rgba(23,20,15,0.12);position:relative;
+  }
+  .rev-card::before{
+    content:"“";position:absolute;top:-8px;left:16px;font-family:'Anton';font-size:52px;color:var(--amber);
+    line-height:1;
+  }
+  .rev-card p.quote{font-size:15px;line-height:1.6;color:var(--ink-soft);font-weight:500;margin:14px 0 18px;}
+  .rev-foot{display:flex;align-items:center;gap:11px;}
+  .rev-avatar{
+    width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:none;font-family:'Anton';
+  }
+  .rev-name{font-weight:800;font-size:13.5px;}
+  .rev-meta{font-size:11.5px;color:var(--muted);font-weight:700;}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--amber);border:3px solid var(--ink);border-radius:4px;
+    padding:60px 50px;text-align:center;box-shadow:9px 9px 0 var(--ink);
+    position:relative;
+  }
+  .cta-band h2{font-size:clamp(30px,4vw,46px);margin-bottom:14px;}
+  .cta-band p{font-size:16px;font-weight:700;margin-bottom:28px;color:var(--ink-soft);}
+  .cta-band .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .cta-band .btn{background:var(--ink);color:var(--cream);}
+  .cta-band .btn.ghost{background:transparent;color:var(--ink);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:3px solid var(--ink);border-radius:4px;overflow:hidden;}
+  .contact-info{background:var(--ink);color:var(--cream);padding:54px 46px;}
+  .contact-info h2{color:#fff;font-size:30px;margin-bottom:14px;}
+  .contact-info > p{color:#cfc2a6;font-size:15px;line-height:1.6;margin-bottom:32px;font-weight:500;}
+  .contact-row{display:flex;gap:15px;margin-bottom:24px;align-items:flex-start;}
+  .contact-row svg{width:19px;height:19px;color:var(--amber);flex:none;margin-top:2px;}
+  .contact-row h4{color:#fff;font-size:13.5px;margin-bottom:4px;font-family:'DM Sans';font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+  .contact-row p, .contact-row a{color:#d9cdb2;font-size:14.5px;line-height:1.55;font-weight:500;}
+  .hours-table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .hours-table td{padding:4px 0;font-size:14px;color:#d9cdb2;font-weight:500;}
+  .hours-table td:last-child{text-align:right;font-weight:800;color:#fff;}
+  .map-embed{min-height:420px;background:var(--cream-2);}
+  .map-embed iframe{width:100%;height:100%;min-height:420px;border:0;filter:saturate(0.9) contrast(1.02);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#cfc2a6;padding:60px 0 26px;border-top:4px solid var(--amber);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px;margin-bottom:46px;}
+  .footer-brand h3{color:#fff;font-size:22px;margin-bottom:14px;}
+  .footer-brand h3 span{color:var(--amber);}
+  footer p.tag-line{font-size:14px;line-height:1.6;color:#a99b7e;max-width:280px;font-weight:500;}
+  footer h5{color:#fff;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;font-weight:800;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  footer ul a{font-size:14px;color:#c3b494;transition:color .2s;font-weight:500;}
+  footer ul a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid rgba(245,237,221,0.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#9c8e72;font-weight:500;}
+  .back-to-top{
+    position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;
+    background:var(--amber);color:var(--ink);display:flex;align-items:center;justify-content:center;
+    border:3px solid var(--ink);box-shadow:4px 4px 0 rgba(23,20,15,0.5);
+    opacity:0;pointer-events:none;transition:opacity .3s, transform .2s;z-index:50;
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;}
+  .back-to-top:hover{transform:translate(-2px,-2px);}
+  .back-to-top svg{width:19px;height:19px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1020px){
+    .hero-grid{grid-template-columns:1fr;}
+    .collage{height:340px;order:-1;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo{max-width:340px;margin:0 auto 40px;}
+    .menu-wrap{grid-template-columns:1fr;}
+    .menu-col + .menu-col{border-left:none;border-top:3px dashed var(--ink);}
+    .why-grid{grid-template-columns:1fr 1fr;gap:34px 0;}
+    .why-cell{border-left:none;padding:0 12px;}
+    .rev-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+    .header-actions .btn.ghost{display:none;}
+    .stats-row{gap:14px 26px;}
+    .stat-item{min-width:44%;}
+    .why-grid{grid-template-columns:1fr;}
+    .why-cell{border-top:1px solid rgba(245,237,221,0.15);padding-top:26px;}
+    .why-cell:first-child{border-top:none;padding-top:0;}
+    .rev-grid{grid-template-columns:1fr;}
+    .section{padding:64px 0;}
+    .cta-band{padding:44px 24px;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+    .stamp{width:86px;height:86px;}
+    .stamp b{font-size:20px;}
+  }
+
+  .mobile-nav{
+    position:fixed;inset:0 0 0 auto;width:80%;max-width:320px;background:var(--paper);z-index:100;
+    transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    padding:30px 28px;box-shadow:-10px 0 40px rgba(0,0,0,0.2);
+    display:flex;flex-direction:column;gap:4px;border-left:3px solid var(--ink);
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav a{padding:15px 4px;font-weight:800;font-size:17px;text-transform:uppercase;border-bottom:1px solid var(--line);}
+  .scrim{position:fixed;inset:0;background:rgba(23,20,15,0.45);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+</style>
+</head>
+<body>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Haircuts</span><span>Beard Trim</span><span>Hair Colour</span><span>Hair Spa</span><span>Facials</span><span>Bridal Makeup</span><span>Threading &amp; Waxing</span><span>Walk-ins Welcome</span>
+    <span>Haircuts</span><span>Beard Trim</span><span>Hair Colour</span><span>Hair Spa</span><span>Facials</span><span>Bridal Makeup</span><span>Threading &amp; Waxing</span><span>Walk-ins Welcome</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav-row">
+    <a href="#top" class="brand">
+      <div>
+        <h1>LEE <span>&amp;</span> GUY</h1>
+        <div class="brand-sub">Unisex Salon · Katpadi, Vellore</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+919345355355" class="btn ghost">Call Salon</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Visit</a>
+  <a href="tel:+919345355355" style="color:var(--amber-dark);">Call 093453 55355</a>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="hero-badge-row">
+          <div class="stamp">
+            <b>4.5★</b>
+            <span>558 Reviews</span>
+          </div>
+          <div class="hero-badge-text">Google-rated salon serving <b>Katpadi &amp; all of Vellore</b>.</div>
+        </div>
+        <h2 class="display">CUTS &amp; COLOUR<br>THAT ACTUALLY<br><span class="stroke">SUIT YOU.</span></h2>
+        <p class="lead">Lee &amp; Guy Unisex Salon has been the go-to stop for Katpadi locals — sharp haircuts, clean beard work, colour and spa for everyone, no fuss, no long waits.</p>
+        <div class="hero-ctas">
+          <a href="tel:+919345355355" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            093453 55355
+          </a>
+          <a href="#contact" class="btn ghost">Get Directions</a>
+        </div>
+        <p class="hero-note"><span class="hand">✎ A Katpadi favourite for haircuts</span></p>
+      </div>
+      <div class="collage reveal">
+        <div class="poly p1"><div class="halftone"></div><div class="tape"></div><div class="cap">The Cutting Floor</div></div>
+        <div class="poly p2"><div class="halftone"></div><div class="tape"></div><div class="cap">Colour Bar</div></div>
+        <div class="poly p3"><div class="halftone"></div><div class="tape"></div><div class="cap">Wash &amp; Spa</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item"><b>558</b><span>Google Reviews</span></div>
+        <div class="stat-item"><b>4.5★</b><span>Average Rating</span></div>
+        <div class="stat-item"><b>7</b><span>Days a Week</span></div>
+        <div class="stat-item"><b>100%</b><span>Walk-In Friendly</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="padding-top:130px;">
+    <div class="container about-grid">
+      <div class="about-photo reveal">
+        <div class="frame"><div class="halftone"></div></div>
+        <div class="badge-corner"><b>WALK-INS<br>WELCOME</b></div>
+      </div>
+      <div class="about-copy reveal">
+        <span class="tag"><span class="scribble">The Salon</span></span>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);margin:14px 0 18px;">A neighbourhood salon built for Katpadi, run for the long haul.</h2>
+        <p>Set up in Katpadi, Lee &amp; Guy has grown into one of the most-reviewed unisex salons in the area — nearly 560 Google reviews and counting, from families and regulars all across Vellore.</p>
+        <p class="pull">"Nice service, very kind response" — that's the kind of thing patrons keep writing, and it's exactly the vibe we go for.</p>
+        <p>No pretension, no upsell pressure — just clean, precise haircuts, honest beard work, and colour and spa services done properly, priced fairly for a college crowd.</p>
+        <ul class="about-list">
+          <li>Unisex — Men &amp; Women</li>
+          <li>Open 7 Days</li>
+          <li>In Katpadi, Vellore</li>
+          <li>Walk-ins Welcome</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag"><span class="scribble">On The Menu</span></span>
+        <h2>Services for him &amp; her.</h2>
+        <p>A full unisex menu — from a quick trim between classes to a full colour and spa session. Call ahead for current pricing.</p>
+      </div>
+      <div class="menu-wrap reveal">
+        <div class="menu-col gents">
+          <h3>For <em>Him</em></h3>
+          <span class="menu-tag">Gents</span>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Haircut &amp; Styling</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Beard Trim &amp; Shape-Up</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Hot Towel Shave</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Hair Colour</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Head Massage</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Facial &amp; Cleanup</span></div>
+        </div>
+        <div class="menu-col ladies">
+          <h3>For <em>Her</em></h3>
+          <span class="menu-tag">Ladies</span>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Haircut &amp; Styling</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Colour &amp; Highlights</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Keratin &amp; Smoothening</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Hair Spa &amp; Treatment</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Threading &amp; Waxing</span></div>
+          <div class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Bridal &amp; Party Makeup</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY (diagonal) -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-head reveal" style="max-width:640px;">
+        <span class="tag" style="color:var(--amber);"><span class="scribble" style="background:none;color:var(--amber);">Why Students &amp; Locals Stick Around</span></span>
+        <h2 style="color:#fff;margin-top:14px;">Four reasons the queue's usually worth it.</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-cell">
+          <b class="big">01</b>
+          <h4>Easy To Find In Katpadi</h4>
+          <p>Centrally located in Vaibhav Nagar, Katpadi — easy to reach with nearby parking.</p>
+        </div>
+        <div class="why-cell">
+          <b class="big">02</b>
+          <h4>Polite, Patient Staff</h4>
+          <p>Reviewers call out the friendly, unhurried service again and again — no rushing you out the chair.</p>
+        </div>
+        <div class="why-cell">
+          <b class="big">03</b>
+          <h4>Fairly Priced</h4>
+          <p>Well-priced cuts and services that don't feel like a stretch on a student or family budget.</p>
+        </div>
+        <div class="why-cell">
+          <b class="big">04</b>
+          <h4>Open Every Day</h4>
+          <p>Seven days a week until 9 PM, so there's almost always a slot that fits your schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag"><span class="scribble">Inside The Salon</span></span>
+        <h2>A peek behind the chairs.</h2>
+      </div>
+      <div class="polaroid-row reveal">
+        <div class="polaroid"><div class="shot"><div class="halftone" style="background:linear-gradient(150deg,var(--amber-dark),var(--ink));position:relative;"></div></div><div class="cap-text">Cutting Station</div></div>
+        <div class="polaroid"><div class="shot"><div class="halftone" style="background:linear-gradient(150deg,var(--rose-dark),var(--ink));position:relative;"></div></div><div class="cap-text">Wash Bay</div></div>
+        <div class="polaroid"><div class="shot"><div class="halftone" style="background:linear-gradient(150deg,var(--ink-soft),var(--ink));position:relative;"></div></div><div class="cap-text">Colour Corner</div></div>
+        <div class="polaroid"><div class="shot"><div class="halftone" style="background:linear-gradient(150deg,var(--amber),var(--ink-soft));position:relative;"></div></div><div class="cap-text">Waiting Lounge</div></div>
+        <div class="polaroid"><div class="shot"><div class="halftone" style="background:linear-gradient(150deg,var(--rose),var(--ink-soft));position:relative;"></div></div><div class="cap-text">Styling Chairs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag"><span class="scribble">Word On Campus</span></span>
+        <h2>What Katpadi is saying.</h2>
+      </div>
+      <div class="rev-summary reveal">
+        <span class="big">4.5</span>
+        <div>
+          <div class="rev-stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.2l6.1-.6z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.2l6.1-.6z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.2l6.1-.6z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.2l6.1-.6z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor" style="opacity:.4;"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          </div>
+          <span class="rev-sub">Based on 558 verified Google reviews</span>
+        </div>
+      </div>
+      <div class="rev-tags reveal">
+        <span>Polite Staff</span>
+        <span>Affordable</span>
+        <span>Beard Trim</span>
+        <span>Cleanliness</span>
+      </div>
+      <div class="rev-grid reveal">
+        <div class="rev-card">
+          <p class="quote">Very nice, I'm so happy — hair cut, super nice job.</p>
+          <div class="rev-foot">
+            <div class="rev-avatar">A</div>
+            <div><div class="rev-name">Akbar A.</div><div class="rev-meta">Local Guide · Google Review</div></div>
+          </div>
+        </div>
+        <div class="rev-card">
+          <p class="quote">Very good service and good work, plus it's close to the campus itself.</p>
+          <div class="rev-foot">
+            <div class="rev-avatar">A</div>
+            <div><div class="rev-name">Aahaan K.</div><div class="rev-meta">Google Review</div></div>
+          </div>
+        </div>
+        <div class="rev-card">
+          <p class="quote">Good experience overall. They did a nice job.</p>
+          <div class="rev-foot">
+            <div class="rev-avatar">S</div>
+            <div><div class="rev-name">Shaurya P.</div><div class="rev-meta">Google Review</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Due for a cut? Walk in or call ahead.</h2>
+        <p>Open 7 days a week, right in the heart of Katpadi.</p>
+        <div class="row">
+          <a href="tel:+919345355355" class="btn">Call 093453 55355</a>
+          <a href="#contact" class="btn ghost">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" style="padding-top:0;">
+    <div class="container">
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <span class="tag" style="color:var(--amber);"><span class="scribble" style="background:none;">Find Us</span></span>
+          <h2 style="margin-top:14px;">Visit the salon</h2>
+          <p>In Vaibhav Nagar, Katpadi, Vellore — easy to find, easy to reach.</p>
+
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><h4>Address</h4><p>Lee &amp; Guy Unisex Salon, Vaibhav Nagar,<br>Katpadi, Vellore, Tamil Nadu 632007</p></div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><h4>Phone</h4><p><a href="tel:+919345355355">093453 55355</a></p></div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
+            <div>
+              <h4>Working Hours</h4>
+              <table class="hours-table">
+                <tr><td>Every day</td><td>9:30 AM – 9:00 PM</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Lee+%26+Guy+Unisex+Salon,+Vaibhav+Nagar,+Katpadi,+Vellore,+Tamil+Nadu+632007&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lee & Guy Unisex Salon location map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LEE <span>&amp;</span> GUY</h3>
+        <p class="tag-line">Unisex salon in Katpadi, Vellore — haircuts, colour, spa and grooming for everyone.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Haircut &amp; Styling</a></li>
+          <li><a href="#services">Beard Trim</a></li>
+          <li><a href="#services">Hair Colour</a></li>
+          <li><a href="#services">Bridal Makeup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>Vaibhav Nagar,<br>Katpadi, Vellore 632007</li>
+          <li><a href="tel:+919345355355">093453 55355</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Lee &amp; Guy Unisex Salon. All rights reserved.</span>
+      <span>Cutting it straight in Katpadi since day one.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  // Mobile nav
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const scrim = document.getElementById('scrim');
+  function closeNav(){ mobileNav.classList.remove('open'); scrim.classList.remove('show'); }
+  menuToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+    scrim.classList.toggle('show');
+  });
+  scrim.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Back to top
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 500);
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
