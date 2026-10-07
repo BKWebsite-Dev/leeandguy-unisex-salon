@@ -45,8 +45,9 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 @keyframes tw{0%,60%{opacity:0}61%,100%{opacity:1}}
 .toprow{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;font-size:12px;position:relative}
 .toprow p{max-width:300px;color:var(--mute)}
-.hl{font-family:var(--px);font-weight:400;font-size:clamp(4rem,16vw,13.5rem);line-height:.95;white-space:nowrap;margin:26px 0 30px;position:relative;letter-spacing:0}
-.hl div{display:inline-block;animation:mq 22s linear infinite}
+.hl{font-family:var(--px);font-weight:400;font-size:clamp(3rem,15vw,13.5rem);line-height:.95;white-space:nowrap;margin:26px 0 30px;position:relative;letter-spacing:0;text-align:center}
+.hl div{display:block}
+.hl small{display:block;font-size:.42em;margin-top:.2em;letter-spacing:.04em}
 .hl i{font-style:normal;color:var(--lime)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
@@ -205,7 +206,7 @@ footer .wrap.r{display:flex;justify-content:space-between;gap:20px;flex-wrap:wra
     <span>Unisex salon<span class="x">×××</span></span>
     <p>Cuts, trims, colour and care in Katpadi, Vellore. Open until 9 pm.</p>
   </div>
-  <h1 class="hl" aria-label="Lee and Guy Unisex Salon"><div aria-hidden="true">LEE<i>&amp;</i>GUY/SALON/LEE<i>&amp;</i>GUY/SALON/</div></h1>
+  <h1 class="hl" aria-label="Lee and Guy Unisex Salon"><div aria-hidden="true">LEE<i>&amp;</i>GUY<small>UNISEX SALON</small></div></h1>
   <div class="wrap">
     <div class="panel">
       <svg id="art" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
